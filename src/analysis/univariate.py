@@ -28,7 +28,7 @@ class Univariate:
             raise ValueError(f"Column '{column}' is not categorical.")
         
         total = sum(self.df[column].value_counts().values)
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(6, 4))
         x = self.df[column].value_counts().index
         y = self.df[column].value_counts().values   
         bars = plt.bar(x, y,
@@ -67,7 +67,8 @@ class Univariate:
         if column not in self.df.select_dtypes(include=['number']).columns:
             raise ValueError(f"Column '{column}' is not numerical.")
         
-        plt.figure(figsize=(10,6))
+        plt.figure(figsize=(6,4))
+        plt.axis('tight')
         ax = sns.histplot(data=self.df, x=column, kde=True, bins=10, color='skyblue')
         ax.set_xlabel(f'{column}')
         ax.set_title(f'Distribution of {column}')

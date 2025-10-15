@@ -31,7 +31,7 @@ class Bivariate:
         if column not in numeric_cols:
             raise ValueError(f"Column '{column}' is not numerical.")
         
-        plt.figure(figsize=(10,6))
+        plt.figure(figsize=(6,4))
         ax = sns.scatterplot(data=self.df, x=column, y=self.target, color='skyblue')
         ax.set_xlabel(f'{column}')
         ax.set_ylabel('f{self.target}')
@@ -54,7 +54,7 @@ class Bivariate:
         if column not in categorical_cols:
             raise ValueError(f"Column '{column}' is not categorical.")
         
-        plt.figure(figsize=(10,6))
+        plt.figure(figsize=(6,4))
         ax = sns.boxplot(data=self.df, hue=column, y=self.target, palette='pastel')
         ax.set_xlabel(f'{column}')
         ax.set_ylabel(f'{self.target}')
