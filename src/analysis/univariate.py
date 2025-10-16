@@ -34,7 +34,6 @@ class Univariate:
         bars = plt.bar(x, y,
                         color=sns.color_palette('pastel')[0:5],
                         alpha=0.7,
-                        edgecolor='black',
                         width=0.3
                         )
         
@@ -58,7 +57,7 @@ class Univariate:
         """
         Performs bivariate analysis on a numerical column.
         
-        Arg:
+        Args:
             column (str): The name of the numerical column to analyze.
         """
         if column not in self.df.columns:
@@ -68,7 +67,6 @@ class Univariate:
             raise ValueError(f"Column '{column}' is not numerical.")
         
         plt.figure(figsize=(6,4))
-        plt.axis('tight')
         ax = sns.histplot(data=self.df, x=column, kde=True, bins=10, color='skyblue')
         ax.set_xlabel(f'{column}')
         ax.set_title(f'Distribution of {column}')
