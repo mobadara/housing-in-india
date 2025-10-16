@@ -34,7 +34,7 @@ class Bivariate:
         plt.figure(figsize=(6,4))
         ax = sns.scatterplot(data=self.df, x=column, y=self.target, color='skyblue')
         ax.set_xlabel(f'{column}')
-        ax.set_ylabel('f{self.target}')
+        ax.set_ylabel(f'{self.target}')
         ax.set_title(f'Scatter Plot of {self.target} vs {column}')
         plt.show()
         
