@@ -55,7 +55,7 @@ class Bivariate:
             raise ValueError(f"Column '{column}' is not categorical.")
         
         plt.figure(figsize=(6,4))
-        ax = sns.boxplot(data=self.df, hue=column, y=self.target, palette='pastel')
+        ax = sns.boxplot(data=self.df, x=column, y=self.target)
         ax.set_xlabel(f'{column}')
         ax.set_ylabel(f'{self.target}')
         ax.set_title(f'Box Plot of {self.target} vs {column}')
