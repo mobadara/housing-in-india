@@ -1,6 +1,7 @@
 from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="house_price_prediction_app")
 
+
 def get_full_address(address: str) -> str:
     """
     Given a partial address, return the full standardized address using geocoding.
@@ -32,4 +33,4 @@ def get_address_from_coordinates(lat: float, lon: float) -> str:
     if location:
         return location.address
     else:
-        return "Address not found"  
+        return 'Address not found'  
